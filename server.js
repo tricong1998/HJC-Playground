@@ -15,18 +15,24 @@ app.get("/",function(req,res){
 
 app.get("/users",function(req,res){
   var person1 = {
-    name: "Duong",
-    age: "18"
+      name: "Hoang",
+      age : "14",
+      email: "angsm",
+      ID: "12324",
   }
 
   var person2 = {
-    name: "hihi Duong",
-    age: "20"
+      name: "hihi Duong",
+      age: "20",
+      email :"abc",
+      ID : "1234"
   }
 
   var person3 = {
-    name: "Duongasda",
-    age: "182"
+      name: "Duongasda",
+      age: "182",
+      email :"abc",
+      ID : "12345"
   }
 
   var listUser = [person1, person2, person3];
