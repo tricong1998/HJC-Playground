@@ -4,11 +4,40 @@ module_authen.factory("Auth",
     var service = {};
     service.Login = function (username, password, callback) {
       $timeout(function(){
+<<<<<<< HEAD
         var response = { success: username === "4players" && password === "abc123" };
         if(!response.success) {
           response.message = "Username or password is incorrect";
         }
         callback(response);
+=======
+        var credential = {
+          username: username,
+          password: password
+        };
+        var response = {};
+        $http({
+          method: "POST",
+          url: '/login',
+          data: credential,
+          headers: { 'Content-Type': 'application/json' }
+        }).then(function Success(res) {
+          console.log(res);
+          var response = {};
+          if (res.data.message === "success") {
+            response.success = true;
+            callback(response);
+          }
+          else {
+            response.message = "Username or password is incorrect";
+            callback(response);
+          }
+        }, function Error(res) {
+          console.log(res);
+          response.message = "Username or password is incorrect";
+          callback(response);
+        });
+>>>>>>> 375264efb61a0a913bba3491c11510cb9b137434
       }, 1000);
     };
 
