@@ -4,13 +4,6 @@ module_authen.factory("Auth",
     var service = {};
     service.Login = function (username, password, callback) {
       $timeout(function(){
-<<<<<<< HEAD
-        var response = { success: username === "4players" && password === "abc123" };
-        if(!response.success) {
-          response.message = "Username or password is incorrect";
-        }
-        callback(response);
-=======
         var credential = {
           username: username,
           password: password
@@ -37,7 +30,6 @@ module_authen.factory("Auth",
           response.message = "Username or password is incorrect";
           callback(response);
         });
->>>>>>> 375264efb61a0a913bba3491c11510cb9b137434
       }, 1000);
     };
 
